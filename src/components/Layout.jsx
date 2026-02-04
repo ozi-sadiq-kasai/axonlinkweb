@@ -1,21 +1,19 @@
-import { Outlet, Link } from 'react-router-dom';
+import { Outlet } from 'react-router-dom';
+import Navbar from './Navbar/Navbar';
+import Footer from './Footer/Footer';
+import style from './Layout.module.css'
 
 function Layout() {
   return (
-    <div>
-      <nav>
-        <ul>
-          <li><Link to="/">LandingPage</Link></li>
-          {/* <li><Link to="/about">About</Link></li>
-          <li><Link to="/contact">Contact</Link></li> */}
-        </ul>
-      </nav>
-      
+    <>
+      <div className={style.navbar}>
+        <Navbar />
+      </div>
       <main >
-        {/* This renders the matched route component */}
         <Outlet />
       </main>
-    </div>
+      <Footer />
+    </>
   );
 }
 

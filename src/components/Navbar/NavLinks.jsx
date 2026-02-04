@@ -1,15 +1,80 @@
 import styles from './Navbar.module.css';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
-const NavLinks = ({ open }) => {
+const NavLinks = ({ open, onClick }) => {
   return (
     <ul className={`${styles.navLinks} ${open ? styles.open : ''}`}>
-      <Link to='/features'>Features</Link>
-      <Link to='/solution'>Solution</Link>
-      <Link to='/howitworks'>How it works</Link>
-      <Link to='/security'>Security</Link>
-      <Link to='/aboutus'>About us</Link>
-      <Link to='/contact'>Contact</Link>
+      <li>
+        <NavLink
+          to="/features"
+          onClick={onClick}
+          className={({ isActive }) =>
+            isActive ? styles.activeLink : undefined
+          }
+        >
+          Features
+        </NavLink>
+      </li>
+
+      <li>
+        <NavLink
+          to="/solution"
+          onClick={onClick}
+          className={({ isActive }) =>
+            isActive ? styles.activeLink : undefined
+          }
+        >
+          Solution
+        </NavLink>
+      </li>
+
+      <li>
+        <NavLink
+          to="/howitworks"
+          onClick={onClick}
+          className={({ isActive }) =>
+            isActive ? styles.activeLink : undefined
+          }
+        >
+          How it works
+        </NavLink>
+      </li>
+
+      <li>
+        <NavLink
+          to="/security"
+          onClick={onClick}
+          className={({ isActive }) =>
+            isActive ? styles.activeLink : undefined
+          }
+        >
+          Security
+        </NavLink>
+      </li>
+
+      <li>
+        <NavLink
+          to="/aboutus"
+          onClick={onClick}
+          className={({ isActive }) =>
+            isActive ? styles.activeLink : undefined
+          }
+        >
+          About us
+        </NavLink>
+      </li>
+
+      <li>
+        <NavLink
+          to="/contact"
+          onClick={onClick}
+          className={({ isActive }) =>
+            isActive ? styles.activeLink : undefined
+          }
+        >
+          Contact
+        </NavLink>
+      </li>
     </ul>
   );
 };

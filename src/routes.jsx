@@ -1,22 +1,32 @@
-import { Routes, Route} from 'react-router-dom'
-import LandingPage from './pages/LandingPage/LandingPage'
+import { Routes, Route } from 'react-router-dom';
+import Layout from './components/Layout';
 
+import LandingPage from './pages/LandingPage/LandingPage';
+import SolutionPage from './pages/SolutionPage/SolutionPage.jsx';
+import FeaturesPage from './pages/FeaturesPage/FeaturesPage.jsx';
+import AboutUsPage from './pages/AboutUsPage/AboutUsPage.jsx'
+import ContactPage from './pages/ContactPage/ContactPage.jsx';
+import HowItWorksPage from './pages/HowItWorksPage/HowItWorksPage.jsx';
+import SecurityPage from './pages/SecurityPage/SecurityPage.jsx';
+import NotFoundPage from './pages/NotFoundPage.jsx'
 
-const AppRoutes = () => {
+function AppRoutes() {
   return (
     <Routes>
-      {/* Routes with Layout wrapper */}
-      <Route path="/" element={<Layout />}>
+      <Route element={<Layout />}>
         <Route index element={<LandingPage />} />
-        {/* <Route path="about" element={<About />} />
-        <Route path="contact" element={<Contact />} />
-        <Route path="profile/:userId" element={<UserProfile />} /> */}
+        <Route path="features" element={<FeaturesPage />} />
+        <Route path="solution" element={<SolutionPage />} />
+        <Route path="aboutus" element={<AboutUsPage />} />
+        <Route path="contact" element={<ContactPage />} />
+        <Route path="howitworks" element={<HowItWorksPage />} />
+        <Route path="security" element={<SecurityPage />} />
+
+        {/* Catch-all route for 404 */}
+        <Route path='*' element={<NotFoundPage />} />
       </Route>
- 
-      {/* Catch-all route for 404 */}
-      <Route path="*" element={<NotFound />} />
     </Routes>
-  )
+  );
 }
 
-export default AppRoutes
+export default AppRoutes;

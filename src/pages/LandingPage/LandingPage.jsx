@@ -1,8 +1,5 @@
-import { Link } from 'react-router-dom';
-import styles from './LandingPage.module.css';
-import Navbar from '../../components/Navbar/Navbar.jsx';
+//import styles from './LandingPage.module.css';
 import FaqSection from '../../components/FAQ/Faq.jsx';
-import Footer from '../../components/Footer/Footer.jsx';
 
 import HeroSection from './sections/HeroSection';
 import PlatformSection from './sections/PlatformSection';
@@ -14,24 +11,16 @@ import JoinBanner from './sections/JoinBanner';
 
 const LandingPage = () => {
   return (
-    <main className={styles.body}>
-      <div className={styles.navbarContainer}>
-        <Navbar />
-      </div>
-
+    <div>
       <HeroSection />
       <PlatformSection />
       <JourneySection />
       <HowSection />
       <SecuritySection />
       <DataSection />
-
       <FaqSection />
-
       <JoinBanner />
-
-      <Footer />
-    </main>
+    </div>
   );
 };
 

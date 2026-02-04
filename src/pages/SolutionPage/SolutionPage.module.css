@@ -1,0 +1,212 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 120px;
+  padding: 96px 0;
+}
+
+/* each row */
+.block {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 64px;
+}
+
+/* alternate layout */
+.reverse {
+  direction: rtl;
+}
+
+.reverse > * {
+  direction: ltr;
+}
+
+/* left/right content */
+.content h3 {
+  font-size: 28px;
+  margin-bottom: 12px;
+  color: black;
+}
+
+.content p {
+  max-width: 520px;
+  color: black;
+  line-height: 1.6;
+  margin-bottom: 24px;
+}
+
+.tag {
+  display: inline-block;
+  font-size: 12px;
+  padding: 6px 12px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.08);
+  color: #ffffff;
+  margin-bottom: 16px;
+}
+
+.content ul {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 32px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.content li {
+  color: #e0e0e0;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* simple bullet icon */
+.content li::before {
+  content: "✔";
+  color: #6f5cff;
+  font-size: 12px;
+}
+
+.cta {
+  padding: 14px 24px;
+  border-radius: 999px;
+  border: none;
+  background: #6f5cff;
+  color: white;
+  cursor: pointer;
+}
+
+/* image */
+.imageWrap img {
+  width: 100%;
+  max-width: 520px;
+  border-radius: 16px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.joinBanner {
+  margin: 0px 110px 100px 110px;
+  padding: 80px 40px;
+  border-radius: 28px;
+  background: #f3f2f9;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.joinTitle {
+  font-size: 36px;
+  font-weight: 700;
+  color: #4b3fa2;
+  margin-bottom: 12px;
+}
+
+.joinText {
+  max-width: 720px;
+  font-size: 16px;
+  color: #6b6b6b;
+  line-height: 1.6;
+  margin-bottom: 32px;
+}
+
+.joinButtons {
+  display: flex;
+  gap: 16px;
+}
+
+.joinPrimary {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  padding: 12px 22px;
+  border-radius: 999px;
+  border: none;
+  background: #5b4fb2;
+  color: #ffffff;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.joinSecondary {
+  padding: 12px 22px;
+  border-radius: 999px;
+  border: none;
+  background: #ffffff;
+  color: #3a3a3a;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+/* ---------------- mobile ---------------- */
+
+@media (max-width: 768px) {
+  .wrapper {
+    gap: 80px;
+    padding: 64px 0;
+  }
+
+  .block {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .reverse {
+    direction: ltr;
+  }
+
+  .content h3 {
+    font-size: 22px;
+  }
+
+  .content p {
+    max-width: 100%;
+  }
+
+  .imageWrap img {
+    max-width: 100%;
+  }
+
+  /* ---------- JOIN BANNER ---------- */
+
+  .joinBanner {
+    margin: 0 16px 64px;
+    padding: 40px 20px;
+  }
+
+  .joinTitle {
+    font-size: 24px;
+  }
+
+  .joinText {
+    font-size: 14px;
+  }
+
+  .joinButtons {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .joinPrimary,
+  .joinSecondary {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .dataDesktop {
+    display: none;
+  }
+
+  .dataMobile {
+    display: block;
+    width: 100%;
+  }
+}
+
+
