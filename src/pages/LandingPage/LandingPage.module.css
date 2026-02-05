@@ -15,6 +15,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+    border: 2px solid ;
 }
 .mainHeading {
   font-size: 40px;
@@ -31,21 +32,20 @@
   font-weight: 400;
   padding: 5px 0px;
   max-width: 55%;
-  margin: 0 auto;
+  margin: 20px auto;
 }
 .buttonContainer {
-  margin-top: 24px;
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 20px;
+  width: 50%;
 }
 .securityButton,
 .getStartedButton,
 .contactUsButton {
   display: flex;
   align-items: center;
-  gap: 8px;
   padding: 14px 18px;
   border: none;
   background: #52489c;
@@ -53,7 +53,11 @@
   border-radius: 24px;
   cursor: pointer;
   justify-content: center;
-  width: 55%;
+  width: 200px;
+}
+.icon {
+  display: inline-block;
+  padding-left: 5px;
 }
 .contactUsButton {
   background-color: #eeedf5;

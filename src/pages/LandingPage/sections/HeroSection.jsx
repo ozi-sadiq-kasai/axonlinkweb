@@ -22,7 +22,7 @@ const HeroSection = () => {
         <div className={styles.buttonContainer}>
           <button className={styles.getStartedButton}>
             <span className={styles.buttonText}>Get Started</span>
-            <FiArrowUpRight />
+          <span className={styles.icon}><FiArrowUpRight/></span>
           </button>
 
           <button className={styles.contactUsButton}>Contact us</button>

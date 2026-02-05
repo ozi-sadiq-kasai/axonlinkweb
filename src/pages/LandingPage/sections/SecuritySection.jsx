@@ -2,13 +2,13 @@ import { FiArrowUpRight } from 'react-icons/fi';
 import { IoIosCheckmarkCircleOutline } from 'react-icons/io';
 import styles from '../LandingPage.module.css';
 
-import securityPlaceholder from '../../../assets/images/securityPlaceholder.png';
+import security from '../../../assets/images/securityShield.png';
 
 const SecuritySection = () => {
   return (
     <section className={styles.securitySection}>
       <div className={styles.securityImage}>
-        <img src={securityPlaceholder} alt="security placeholder" />
+        <img src={security} alt="security placeholder" />
       </div>
 
       <div className={styles.securityContent}>

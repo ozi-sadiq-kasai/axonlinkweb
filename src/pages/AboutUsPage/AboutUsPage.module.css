@@ -6,9 +6,30 @@
 /* ---------------- hero ---------------- */
 
 .hero {
-  padding: 96px 24px 72px;
+  position: relative;
   text-align: center;
-  background: #f4f4fb;
+  overflow: hidden;
+}
+
+.hero img {
+  width: 100%;
+  max-height: 520px;
+  object-fit: cover;
+  display: block;
+
+}
+
+/* text over banner */
+.heroContent {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+
+  width: 100%;
+  max-width: 900px;
+  padding: 0 16px;
 }
 
 .badge {
@@ -16,19 +37,15 @@
   padding: 6px 14px;
   border-radius: 999px;
   font-size: 12px;
-  color: #6f5cff;
-  background: rgba(111, 92, 255, 0.1);
+  color: #52489C;
+  background: #EEEDF5;
   margin-bottom: 16px;
+  border: 1px solid #a6a6a6;
 }
 
 .hero h1 {
-  font-size: 34px;
   line-height: 1.3;
-  color: #121212;
-}
-
-.hero h1 span {
-  color: #6f5cff;
+  margin: 0;
 }
 
 /* ---------------- who we are ---------------- */

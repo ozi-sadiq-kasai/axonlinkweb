@@ -3,16 +3,20 @@ import styles from './Footer.module.css';
 const groups = [
   {
     title: 'Product',
-    links: ['Features', 'Security', 'Pricing']
+    links: ['Features', 'Solution', 'How it Works', 'Security'],
   },
   {
     title: 'Company',
-    links: ['About', 'Careers', 'Blog']
+    links: ['About Us', 'Team', 'Contact'],
   },
   {
-    title: 'Support',
-    links: ['Help center', 'Contact', 'Status']
-  }
+    title: 'Resources',
+    links: ["FAQ's", 'Help Center'],
+  },
+  {
+    title: 'Terms and Policy',
+    links: ["Privacy Policy", 'Terms of Service'],
+  },
 ];
 
 const FooterLinks = () => {
@@ -22,7 +26,7 @@ const FooterLinks = () => {
         <div key={group.title}>
           <h4>{group.title}</h4>
           {group.links.map((l) => (
-            <a key={l} href="#">
+            <a key={l} href='#'>
               {l}
             </a>
           ))}

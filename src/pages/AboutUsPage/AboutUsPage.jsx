@@ -1,9 +1,8 @@
 import styles from './AboutUsPage.module.css';
 
-import PageBanner from '../../assets/placeholder/PageBanner.png';
-// import team1 from "../../assets/images/team1.png";
-// import team2 from "../../assets/images/team2.png";
-// import team3 from "../../assets/images/team3.png";
+import heroImg from '../../assets/images/aboutUs.png'
+import PageBanner from '../../assets/placeholder/Purple D_Page banner 1.png';
+import joe from '../../assets/team/joe.png'
 
 const team = [
   {
@@ -24,7 +23,7 @@ const team = [
   {
     name: 'Josep Yanum',
     role: 'Product Designer',
-    image: null,
+    image: joe,
   },
   {
     name: 'Olorunfemi Ojo',
@@ -35,15 +34,18 @@ const team = [
 
 const AboutUs = () => {
   return (
-    <div className={styles.page}>
-      {/* Hero */}
+    <>
       <section className={styles.hero}>
-        <span className={styles.badge}>About Us</span>
-        <h1>
-          Connecting Care Through Secure
-          <br />
-          <span>Medical Records and Referrals</span>
-        </h1>
+        <img src={PageBanner} alt='Security banner' />
+
+        <div className={styles.heroContent}>
+          <span className={styles.badge}>About Us</span>
+          <h1>
+            Connecting Care Through Secure
+            <br />
+            <span>Medical Records and Referrals</span>
+          </h1>
+        </div>
       </section>
 
       {/* Who we are */}
@@ -63,7 +65,7 @@ const AboutUs = () => {
         </div>
 
         <div className={styles.whoImage}>
-          <img src={PageBanner} alt='Healthcare consultation' />
+          <img src={heroImg} alt='Healthcare consultation' />
         </div>
       </section>
 
@@ -136,15 +138,26 @@ const AboutUs = () => {
           Driven by purpose, powered by people. Meet the minds shaping our
           vision and pushing boundaries every day.
         </p>
-        <div className={styles.teamGrid}>
-          {team.map((m, i) => (
-            <div
-              key={m.name}
-              className={`${styles.card} ${i >= 3 ? styles.secondRow : ''}`}>
-              ...
-            </div>
-          ))}
-        </div>
+       <div className={styles.teamGrid}>
+  {team.map((m, i) => (
+    <div
+      key={m.name}
+      className={`${styles.card} ${i >= 3 ? styles.secondRow : ''}`}
+    >
+      {m.image ? (
+        <img src={m.image} alt={m.name} />
+      ) : (
+        <div className={styles.placeholder} />
+      )}
+
+      <div className={styles.cardBody}>
+        <strong>{m.name}</strong>
+        <span>{m.role}</span>
+      </div>
+    </div>
+  ))}
+</div>
+
       </section>
 
       {/* CTA */}
@@ -160,7 +173,7 @@ const AboutUs = () => {
           <button className={styles.secondary}>Contact us</button>
         </div>
       </section>
-    </div>
+    </>
   );
 };
 
