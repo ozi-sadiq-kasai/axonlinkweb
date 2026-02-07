@@ -1,7 +1,28 @@
+.mBanner {
+  display: none;
+}
+
 .hero {
-  padding: 80px 24px 64px;
+  position: relative;
   text-align: center;
-  background: #f4f4fb;
+  overflow: hidden;
+}
+
+.dBanner {
+  width: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* text over banner */
+.heroContent {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  width: 100%;
+  max-width: 900px;
 }
 
 .badge {
@@ -9,20 +30,27 @@
   padding: 6px 14px;
   border-radius: 999px;
   font-size: 12px;
-  color: #6f5cff;
-  background: rgba(111, 92, 255, 0.1);
+  color: #52489c;
+  background: #eeedf5;
   margin-bottom: 16px;
+  border: 1px solid #a6a6a6;
 }
 
-.hero h1 span {
-  color: #6f5cff;
+.heroContent h1 {
+  margin: 0 auto;
+  font-size: 28px;
+  line-height: 38px;
+  width: 57%;
 }
 
+.solutionSpan {
+  color: #52489c;
+}
 /* ---------------- tabs ---------------- */
 
 .tabsStickyWrap {
   position: sticky;
-  top: 0;
+  top: 0px;
   z-index: 50;
   background: white;
   padding: 10px 0;
@@ -54,16 +82,49 @@
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
 }
 
-/* ---------------- main layout ---------------- */
+/* ---------------- layout ---------------- */
 
 .section {
-  max-width: 1100px;
+  max-width: 1400px;
   margin: 80px auto 0;
-  padding: 0 24px 0px;
+  padding: 0 24px;
   display: grid;
-  grid-template-columns: 1fr 1.3fr;
   gap: 48px;
   align-items: start;
+  scroll-margin-top: 70px;
+}
+
+/* Patient → header left, cards right */
+.section:nth-of-type(2) {
+  grid-template-columns: 1fr 1.3fr;
+}
+.section:nth-of-type(2) .intro {
+  order: 1;
+}
+.section:nth-of-type(2) .loopViewport {
+  order: 2;
+}
+
+/* Clinician → cards left, header right */
+.section:nth-of-type(3) {
+  grid-template-columns: 1.3fr 1fr;
+}
+.section:nth-of-type(3) .intro {
+  order: 2;
+}
+.section:nth-of-type(3) .loopViewport {
+  order: 1;
+}
+
+/* Facility → header left, cards right */
+.section:nth-of-type(4) {
+  grid-template-columns: 1fr 1.3fr;
+}
+.section:nth-of-type(4) .intro {
+  order: 1;
+}
+.section:nth-of-type(4) .loopViewport {
+  order: 2;
 }
 
 .intro h3 {
@@ -75,16 +136,30 @@
   line-height: 1.6;
 }
 
-/* ---------------- looping area ---------------- */
+/* ---------------- viewport ---------------- */
 
 .loopViewport {
   position: relative;
-  height: 420px;
+  height: 520px;
   overflow: hidden;
   padding: 0 5rem;
 }
 
-/* moving column */
+.loopViewport::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 80px;
+  pointer-events: none;
+  z-index: 5;
+  background: linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 0),
+    rgba(255, 255, 255, 1)
+  );
+}
 
 .loopTrack {
   position: relative;
@@ -92,56 +167,62 @@
   display: flex;
   flex-direction: column;
   gap: 24px;
-
-  animation: scrollLoop 18s linear infinite;
-  animation-play-state: paused;
-}
-
-.play .loopTrack {
-  animation-play-state: running;
 }
 
 /* ---------------- cards ---------------- */
 
 .stepCard {
-  background: #f7f7fb;
-  border-radius: 12px;
-  padding: 16px 16px 18px;
-
   opacity: 0;
-  --x: 0px;
-  transform: translateX(var(--x)) translateY(20px);
+  transform: translateY(24px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+  transition-delay: calc(var(--i) * 0.08s);
 
-  animation: fadeUp 0.6s ease forwards;
-  animation-delay: calc(var(--i) * 0.08s);
+  background-color: #eeedf5;
+
+  /* layout */
+  display: grid;
+  grid-template-columns: auto 1fr;
+  column-gap: 12px;
+  row-gap: 6px;
+  align-items: center;
+  padding: 14px 16px;
+  border-radius: 8px;
 }
 
+.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* number */
 .stepNo {
   font-weight: 600;
-  font-size: 13px;
+  font-size: 18px;
 }
 
+/* title – stays on same row as number */
 .stepCard strong {
-  display: block;
-  margin-top: 4px;
   font-size: 14px;
+  margin: 0;
 }
 
+/* paragraph goes under both */
 .stepCard p {
-  margin-top: 6px;
+  grid-column: 1 / -1;
+  margin: 0;
   font-size: 13px;
   color: #666;
+  background-color: white;
 }
 
-/* ---------------- background rings ---------------- */
+/* ---------------- rings ---------------- */
 
 .rings {
   position: absolute;
-  inset: 0; /* ← was -120px -140px */
+  inset: 0;
   pointer-events: none;
   z-index: 0;
 
-  /* colors still come from section */
   --c1: rgba(111, 92, 255, 0.12);
   --c2: rgba(111, 92, 255, 0.08);
   --c3: rgba(111, 92, 255, 0.05);
@@ -165,53 +246,17 @@
       var(--c3) 69%,
       transparent 69.4%
     );
-
-  animation: ringFloat 18s linear infinite;
 }
 
-/* ---------------- section themes ---------------- */
-
-.purple {
-  --c1: rgba(111, 92, 255, 0.14);
-  --c2: rgba(111, 92, 255, 0.1);
-  --c3: rgba(111, 92, 255, 0.06);
-}
-
-.green {
-  --c1: rgba(122, 168, 116, 0.14);
-  --c2: rgba(122, 168, 116, 0.1);
-  --c3: rgba(122, 168, 116, 0.06);
-}
-
-.blue {
-  --c1: rgba(111, 163, 217, 0.14);
-  --c2: rgba(111, 163, 217, 0.1);
-  --c3: rgba(111, 163, 217, 0.06);
-}
-
-/* step number color still follows section */
 
 .purple .stepNo {
   color: #6f5cff;
 }
-
 .green .stepNo {
   color: #7aa874;
 }
-
 .blue .stepNo {
   color: #6fa3d9;
-}
-
-/* ---------------- animations ---------------- */
-
-@keyframes scrollLoop {
-  from {
-    transform: translateY(0);
-  }
-  to {
-    transform: translateY(-50%);
-  }
 }
 
 @keyframes fadeUp {
@@ -221,36 +266,55 @@
   }
 }
 
-@keyframes ringFloat {
-  from {
-    transform: translateY(0);
-  }
-  to {
-    transform: translateY(40px);
-  }
-}
-
-/* zig-zag layout for looping cards */
-
-/* zig-zag layout for looping cards */
+/* zig-zag */
 
 .loopTrack .stepCard:nth-child(odd) {
-  --x: 18px;
+  --x: 38px;
 }
-
 .loopTrack .stepCard:nth-child(even) {
   --x: -18px;
 }
 
 /* ---------------- mobile ---------------- */
 
-@media (max-width: 900px) {
+@media (max-width: 768px) {
+
   .section {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr !important;
     gap: 32px;
   }
 
+  /* force correct order on mobile */
+  .section .intro {
+    order: 1 !important;
+  }
+
+  .section .loopViewport {
+    order: 2 !important;
+  }
+
   .loopViewport {
-    height: 360px;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    padding: 0 ;
+    height: auto;
+  }
+
+
+  /* remove zig-zag on mobile */
+  .loopTrack .stepCard:nth-child(odd),
+  .loopTrack .stepCard:nth-child(even) {
+    --x: 0px;
+  }
+
+  /* bottom → top animation only */
+  .stepCard {
+    transform: translateY(32px);
+  }
+
+  .show {
+    transform: translateY(0);
   }
 }
+
+
