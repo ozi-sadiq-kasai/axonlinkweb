@@ -2,7 +2,7 @@ import { FiArrowUpRight } from 'react-icons/fi';
 import styles from '../LandingPage.module.css';
 
 import clinician from '../../../assets/images/clinician.png';
-import clinicianuser from '../../../assets/images/clinicianuser.png';
+import healthcare from '../../../assets/images/healthcare.png'
 import patient from '../../../assets/images/patient.png';
 
 const JourneySection = () => {
@@ -26,13 +26,13 @@ const JourneySection = () => {
         </div>
 
         <div className={styles.journeyImageWrap}>
-          <img src={patient} alt="Patients" className={styles.journeyImage} />
+          <img src={patient} alt='Patients' className={styles.journeyImage} />
         </div>
 
         <div className={styles.journeyImageWrap}>
           <img
             src={clinician}
-            alt="Clinicians"
+            alt='Clinicians'
             className={styles.journeyImage}
           />
         </div>
@@ -58,17 +58,15 @@ const JourneySection = () => {
             referrals and appointments across departments.
           </p>
           <button className={styles.getStartedButton}>
-            <span className={styles.buttonText}>
-              Healthcare Facilities
-            </span>
+            <span className={styles.buttonText}>Healthcare Facilities</span>
             <FiArrowUpRight />
           </button>
         </div>
 
         <div className={styles.journeyImageWrap}>
           <img
-            src={clinicianuser}
-            alt="Healthcare Facilities"
+            src={healthcare}
+            alt='Healthcare Facilities'
             className={styles.journeyImage}
           />
         </div>

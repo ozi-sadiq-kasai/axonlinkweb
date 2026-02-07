@@ -5,11 +5,6 @@ import card2 from '../../../assets/images/card2.png';
 import card3 from '../../../assets/images/card3.png';
 import card4 from '../../../assets/images/card4.png';
 
-import cardMobile1 from '../../../assets/images/cardMobile1.png';
-import cardMobile2 from '../../../assets/images/cardMobile2.png';
-import cardMobile3 from '../../../assets/images/cardMobile3.png';
-import cardMobile4 from '../../../assets/images/cardMobile4.png';
-
 const PlatformSection = () => {
   return (
     <section className={styles.platformSection}>
@@ -38,11 +33,6 @@ const PlatformSection = () => {
                 alt="Seamless Referrals and Appointments"
                 className={styles.platformDesktopImg}
               />
-              <img
-                src={cardMobile1}
-                alt="Seamless Referrals and Appointments"
-                className={styles.platformMobileImg}
-              />
             </div>
           </div>
 
@@ -59,15 +49,10 @@ const PlatformSection = () => {
                 alt="Centralized Patient Medical Records"
                 className={styles.platformDesktopImg}
               />
-              <img
-                src={cardMobile2}
-                alt="Centralized Patient Medical Records"
-                className={styles.platformMobileImg}
-              />
             </div>
           </div>
 
-          <div className={styles.platformGridCard}>
+            <div className={`${styles.platformGridCard} ${styles.card3}`} >
             <h3>Built for Patients, Clinicians and Facilities</h3>
             <p>
               Designed for patients, clinicians, and healthcare facilities
@@ -80,15 +65,10 @@ const PlatformSection = () => {
                 alt="Built for Patients, Clinicians and Facilities"
                 className={styles.platformDesktopImg}
               />
-              <img
-                src={cardMobile3}
-                alt="Built for Patients, Clinicians and Facilities"
-                className={styles.platformMobileImg}
-              />
             </div>
           </div>
 
-          <div className={styles.platformGridCard}>
+          <div className={`${styles.platformGridCard} ${styles.card2}`}>
             <h3>Secure, Consent-based Data Access</h3>
             <p>
               Patient data is accessed only with explicit permission and
@@ -99,13 +79,9 @@ const PlatformSection = () => {
               <img
                 src={card2}
                 alt="Secure, Consent-based Data Access"
-                className={styles.platformDesktopImg}
+                className={`${styles.platformDesktopImg} ${styles.platformMobileImg}`}
               />
-              <img
-                src={cardMobile4}
-                alt="Secure, Consent-based Data Access"
-                className={styles.platformMobileImg}
-              />
+               
             </div>
           </div>
         </div>

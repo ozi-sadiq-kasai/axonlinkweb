@@ -1,7 +1,7 @@
 import styles from './AboutUsPage.module.css';
 
 import heroImg from '../../assets/images/aboutUs.png'
-import PageBanner from '../../assets/placeholder/Purple D_Page banner 1.png';
+import PageBanner from '../../assets/banner/Banner.png';
 import joe from '../../assets/team/joe.png'
 
 const team = [

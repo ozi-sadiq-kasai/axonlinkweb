@@ -1,22 +1,31 @@
+/* =========================================================
+   GLOBAL
+========================================================= */
 
 .navbarContainer {
   padding: 0 42px;
 }
+
+
+/* =========================================================
+   HERO SECTION
+========================================================= */
+
 .headerSection {
   display: flex;
   flex-direction: column;
   align-items: center;
   background: linear-gradient(to bottom, white 0%, #eeedf5 100%);
-  /* padding-bottom: 260px; */
 }
+
 .headerContent {
   text-align: center;
   margin-top: 50px;
   display: flex;
   flex-direction: column;
   align-items: center;
-    border: 2px solid ;
 }
+
 .mainHeading {
   font-size: 40px;
   font-weight: 700;
@@ -24,9 +33,11 @@
   max-width: 50%;
   margin: 0 auto;
 }
+
 .headingSpan {
   color: #52489c;
 }
+
 .subHeading {
   font-size: 16px;
   font-weight: 400;
@@ -34,6 +45,7 @@
   max-width: 55%;
   margin: 20px auto;
 }
+
 .buttonContainer {
   display: flex;
   align-items: center;
@@ -41,6 +53,7 @@
   gap: 20px;
   width: 50%;
 }
+
 .securityButton,
 .getStartedButton,
 .contactUsButton {
@@ -55,19 +68,28 @@
   justify-content: center;
   width: 200px;
 }
+
 .icon {
   display: inline-block;
   padding-left: 5px;
 }
+
 .contactUsButton {
   background-color: #eeedf5;
   color: #424242;
 }
+
 .buttonText {
   font-weight: 400;
   font-size: 14px;
   letter-spacing: 0.2px;
 }
+
+
+/* =========================================================
+   HERO IMAGE
+========================================================= */
+
 .imageContainer {
   margin-top: 55px;
   width: 100%;
@@ -81,22 +103,16 @@
   display: block;
   margin: 0 auto;
 }
+
 .imageFade {
   position: absolute;
   left: 0;
   right: 0;
-
-  /* start the fade at half of the image */
   top: 69%;
-
-  /* cover the rest of the image */
   bottom: 0;
-
   pointer-events: none;
-
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
-
   background: linear-gradient(
     to bottom,
     rgba(255, 255, 255, 0) 0%,
@@ -104,44 +120,70 @@
     rgba(255, 255, 255, 1) 100%
   );
 }
+
+
+/* =========================================================
+   PLATFORM SECTION – DESKTOP
+========================================================= */
+
 .platformContent {
   display: flex;
   gap: 10px;
   justify-content: space-between;
   padding: 0rem 7rem 3rem 7rem;
 }
+
 .platformHeading {
   font-size: 32px;
   font-weight: 700;
   width: 40%;
   color: #52489c;
 }
+
 .platformSubheading {
   width: 40%;
   font-size: 16px;
   line-height: 1.2;
   color: #424242;
 }
+
 .platformGridContainer {
   padding: 0 7rem;
 }
+
 .platformGrid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 24px;
 }
+
 .platformGridWide {
   grid-column: span 2;
   border-radius: 16px;
   background-color: #eeedf5;
   padding: 20px;
 }
+
 .platformGridWide p {
   font-size: 14px;
   color: #616161;
   width: 45%;
   font-weight: 400;
 }
+
+.platformGridTall {
+  grid-row: span 2;
+  border-radius: 16px;
+  background-color: #F4F9F3;
+  padding: 20px;
+}
+
+.platformGridCard {
+  background-color: #eeedf5;
+  border-radius: 16px;
+  padding: 24px;
+}
+
 .platformGridCard h3,
 .platformGridTall h3,
 .platformGridWide h3 {
@@ -150,12 +192,7 @@
   font-weight: 700;
   margin-bottom: 8px;
 }
-.platformGridTall {
-  grid-row: span 2;
-  border-radius: 16px;
-  background-color: #eeedf5;
-  padding: 20px;
-}
+
 .platformGridCard p,
 .platformGridTall p {
   font-size: 14px;
@@ -163,41 +200,47 @@
   width: 80%;
   font-weight: 400;
 }
+
 .platformGridTall img {
   margin-top: 2.5rem;
   width: 80%;
 }
+
 .platformGridTall h3 {
   width: 80%;
 }
-.platformGridCard {
-  background-color: #eeedf5;
-  border-radius: 16px;
-  padding: 24px;
-}
+
 .platformGridCard img {
   margin-top: 2.5rem;
   width: 80%;
 }
+
 .platformGridImage {
   width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
 }
+
 .platformDesktopImg {
   display: block;
   height: auto;
+  max-width: 50%;
 }
 
-.platformMobileImg {
-  display: none;
-  width: 100%;
-  height: auto;
+.card3 {
+  background-color: #F6FBFF;
 }
-/* .journeySection {
-  border: 1px solid red;
-} */
+
+.card2 {
+  background-color: #FFF8EE;
+}
+
+
+/* =========================================================
+   JOURNEY SECTION – DESKTOP
+========================================================= */
+
 .journeyHeading {
   font-size: 32px;
   font-weight: 700;
@@ -206,21 +249,23 @@
   text-align: center;
   color: #131313;
 }
+
 .journeyContent {
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
+
 .journeyContentHeading {
   font-size: 22px;
   font-weight: 700;
   color: #424242;
   margin-bottom: 12px;
 }
+
 .journeyContainer {
-  max-width: 1200px;
+  max-width: 1300px;
   margin: 0 auto;
-  padding: 0 4rem 6rem;
   display: grid;
   grid-template-columns: 1fr 1fr;
   column-gap: 5rem;
@@ -228,16 +273,14 @@
   align-items: center;
   position: relative;
 }
+
 .journeyContainer::before {
   content: '';
   position: absolute;
-
   top: 0;
   bottom: 0;
-
   left: 50%;
   transform: translateX(-0.5px);
-
   width: 1px;
   background-color: #c9c6e0;
 }
@@ -253,6 +296,7 @@
   justify-content: center;
   align-items: center;
 }
+
 .journeyContentText {
   font-weight: 400;
   font-size: 16px;
@@ -260,11 +304,18 @@
   max-width: 420px;
   margin-bottom: 2rem;
 }
+
 .journeyImage {
   max-width: 420px;
   width: 100%;
   margin: 0;
 }
+
+
+/* =========================================================
+   HOW IT WORKS SECTION – DESKTOP
+========================================================= */
+
 .howSection {
   margin-top: 5rem;
   display: flex;
@@ -274,32 +325,41 @@
   gap: 1rem;
   padding: 5rem 13rem;
 }
+
 .howContent {
   flex: 1;
 }
+
 .howImage {
   flex: 1;
   display: flex;
-  justify-content: flex-end; /* push image to the right */
+  justify-content: flex-end;
 }
+
 .howImage img {
   width: 100%;
-  max-width: 420px; /* control size here instead */
+  max-width: 320px;
   height: auto;
   object-fit: contain;
 }
+
 .howContentHeading {
   font-size: 32px;
   font-weight: 700;
   color: #131313;
 }
+
 .howContentText {
   font-size: 16px;
   color: #616161;
   margin: 16px 0px 24px 0px;
   max-width: 70%;
-  margin: 16px 0px 24px 0px;
 }
+
+
+/* =========================================================
+   SECURITY SECTION – DESKTOP
+========================================================= */
 
 .securitySection {
   display: grid;
@@ -309,10 +369,12 @@
   gap: 4rem;
   background-color: #91c48829;
 }
+
 .checkIcon {
   color: #84b27c;
   font-size: 28px;
 }
+
 .securityCheckMark {
   background-color: rgba(132, 178, 124, 0.16);
   width: 6%;
@@ -322,21 +384,25 @@
   justify-content: center;
   align-items: center;
 }
+
 .securityImage {
   display: flex;
   justify-content: center;
   align-items: center;
 }
+
 .securityImage img {
   max-width: 380px;
   width: 100%;
 }
+
 .securityContent {
   display: flex;
   flex-direction: column;
   justify-content: center;
   max-width: 520px;
 }
+
 .securityContentHeading {
   font-size: 32px;
   font-weight: 700;
@@ -344,11 +410,13 @@
   margin-bottom: 12px;
   width: 90%;
 }
+
 .securityContentText {
   font-size: 16px;
   color: #616161;
   margin-bottom: 24px;
 }
+
 .securityContent ul {
   list-style: none;
   padding: 0;
@@ -369,18 +437,27 @@
   font-size: 14px;
   color: #131313;
 }
+
 .securityButton {
   background-color: #84b27c;
 }
+
+
+/* =========================================================
+   DATA STRIP – DESKTOP
+========================================================= */
+
 .dataSection {
-  padding: 4rem 0 0;
+  padding: 4rem ;
   display: flex;
   justify-content: center;
   align-items: center;
 }
+
 .dataSection img {
   max-width: 100%;
 }
+
 .dataDesktop {
   display: block;
 }
@@ -388,63 +465,14 @@
 .dataMobile {
   display: none;
 }
-.joinBanner {
-  margin: 0px 110px 100px 110px;
-  padding: 80px 40px;
-  border-radius: 28px;
-  background: #f3f2f9;
 
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-}
 
-.joinTitle {
-  font-size: 36px;
-  font-weight: 700;
-  color: #4b3fa2;
-  margin-bottom: 12px;
-}
-
-.joinText {
-  max-width: 720px;
-  font-size: 16px;
-  color: #6b6b6b;
-  line-height: 1.6;
-  margin-bottom: 32px;
-}
-
-.joinButtons {
-  display: flex;
-  gap: 16px;
-}
-
-.joinPrimary {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-
-  padding: 12px 22px;
-  border-radius: 999px;
-  border: none;
-  background: #5b4fb2;
-  color: #ffffff;
-  font-size: 14px;
-  cursor: pointer;
-}
-
-.joinSecondary {
-  padding: 12px 22px;
-  border-radius: 999px;
-  border: none;
-  background: #ffffff;
-  color: #3a3a3a;
-  font-size: 14px;
-  cursor: pointer;
-}
+/* =========================================================
+   MOBILE (FIRST MEDIA BLOCK)
+========================================================= */
 
 @media (max-width: 768px) {
+
   .navbarContainer {
     padding: 0 16px;
   }
@@ -531,18 +559,16 @@
   }
 }
 
-/* =========================
-   MOBILE LAYOUT
-========================= */
+
+/* =========================================================
+   MOBILE – FULL LAYOUT
+========================================================= */
 
 @media (max-width: 768px) {
-  /* ---------- global spacing ---------- */
 
   .navbarContainer {
     padding: 0 16px;
   }
-
-  /* ---------- HERO ---------- */
 
   .headerSection {
     padding-bottom: 32px;
@@ -579,7 +605,8 @@
     width: 70%;
   }
 
-  /* ---------- PLATFORM ---------- */
+
+  /* PLATFORM */
 
   .platformContent {
     flex-direction: column;
@@ -618,17 +645,17 @@
   .platformGridCard p {
     width: 100%;
   }
-   .platformGridImage {
+
+  .platformGridImage {
     margin-top: 16px;
   }
-    .platformDesktopImg {
-    display: none;
-  }
 
-  .platformMobileImg {
+  .platformDesktopImg {
     display: block;
   }
-  /* ---------- JOURNEY ---------- */
+
+
+  /* JOURNEY */
 
   .journeyHeading {
     padding: 0 16px;
@@ -653,7 +680,17 @@
     max-width: 100%;
   }
 
-  /* ---------- HOW IT WORKS ---------- */
+  .journeyContainer > :nth-child(2) { order: 1; }
+  .journeyContainer > :nth-child(1) { order: 2; }
+
+  .journeyContainer > :nth-child(3) { order: 3; }
+  .journeyContainer > :nth-child(4) { order: 4; }
+
+  .journeyContainer > :nth-child(6) { order: 5; }
+  .journeyContainer > :nth-child(5) { order: 6; }
+
+
+  /* HOW IT WORKS */
 
   .howSection {
     flex-direction: column;
@@ -665,7 +702,8 @@
     max-width: 100%;
   }
 
-  /* ---------- SECURITY ---------- */
+
+  /* SECURITY */
 
   .securitySection {
     grid-template-columns: 1fr;
@@ -685,36 +723,11 @@
     width: 100%;
   }
 
-  /* ---------- DATA / IMAGE STRIP ---------- */
+
+  /* DATA STRIP */
 
   .dataSection {
     padding: 32px 16px 48px;
-  }
-
-  /* ---------- JOIN BANNER ---------- */
-
-  .joinBanner {
-    margin: 0 16px 64px;
-    padding: 40px 20px;
-  }
-
-  .joinTitle {
-    font-size: 24px;
-  }
-
-  .joinText {
-    font-size: 14px;
-  }
-
-  .joinButtons {
-    flex-direction: column;
-    width: 100%;
-  }
-
-  .joinPrimary,
-  .joinSecondary {
-    width: 100%;
-    justify-content: center;
   }
 
   .dataDesktop {
