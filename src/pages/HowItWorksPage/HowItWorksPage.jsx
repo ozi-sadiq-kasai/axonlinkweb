@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import styles from './HowItWorksPage.module.css';
 import Banner from '../../assets/banner/Banner.png';
+import mBanner from '../../assets/banner/mobilePurpleBanner.png';
 import Join from '../../components/Join/Join';
 
 const DATA = {
@@ -154,15 +155,18 @@ export default function HowItWorks() {
           alt='How it Works Banner'
           className={styles.dBanner}
         />
+        <img
+          src={mBanner}
+          alt='How it Works Banner'
+          className={styles.mBanner}
+        />
 
         <div className={styles.heroContent}>
           <span className={styles.badge}>How It Works</span>
 
           <h1>
-            Built for the Entire{' '}
-            <span className={styles.solutionSpan}>Healthcare</span>
-            <br />
-            Health Journey
+            Built for Every <br />
+            Role in <span className={styles.solutionSpan}> Healthcare</span>
           </h1>
         </div>
       </section>

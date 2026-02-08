@@ -54,7 +54,6 @@
   z-index: 50;
   background: white;
   padding: 10px 0;
-  border-bottom: 1px solid #eee;
   display: flex;
   justify-content: center;
 }
@@ -129,10 +128,11 @@
 
 .intro h3 {
   margin-bottom: 8px;
+  color: #131313;
 }
 
 .intro p {
-  color: #555;
+  color: #424242;
   line-height: 1.6;
 }
 
@@ -174,9 +174,10 @@
 .stepCard {
   opacity: 0;
   transform: translateY(24px);
-  transition: opacity 0.5s ease, transform 0.5s ease;
+  transition:
+    opacity 0.5s ease,
+    transform 0.5s ease;
   transition-delay: calc(var(--i) * 0.08s);
-
   background-color: #eeedf5;
 
   /* layout */
@@ -248,7 +249,6 @@
     );
 }
 
-
 .purple .stepNo {
   color: #6f5cff;
 }
@@ -278,10 +278,44 @@
 /* ---------------- mobile ---------------- */
 
 @media (max-width: 768px) {
+  .dBanner {
+    display: none;
+  }
+  .mBanner {
+    display: block;
+    width: 100%;
+    object-fit: cover;
+  }
+
+  .badge {
+    padding: 4px 12px;
+    font-size: 12px;
+    margin-bottom: 8px;
+  }
+
+  .tabsStickyWrap {
+    padding: 10px 0;
+  }
+
+  .tabs {
+    gap: 3px;
+    padding: 3px;
+  }
+
+  .tabs button {
+    font-size: 10px;
+  }
+
+  .heroContent h1 {
+    font-size: 22px;
+    line-height: 28px;
+    width: 90%;
+  }
 
   .section {
     grid-template-columns: 1fr !important;
     gap: 32px;
+    margin: 20px auto 0;
   }
 
   /* force correct order on mobile */
@@ -293,13 +327,21 @@
     order: 2 !important;
   }
 
+  .intro h3 {
+    font-size: 22px;
+  }
+
+  .intro p {
+    line-height: 20.4px;
+    font-size: 16px;
+  }
+
   .loopViewport {
     overflow-y: auto;
     overscroll-behavior: contain;
-    padding: 0 ;
+    padding: 0;
     height: auto;
   }
-
 
   /* remove zig-zag on mobile */
   .loopTrack .stepCard:nth-child(odd),
@@ -307,14 +349,22 @@
     --x: 0px;
   }
 
-  /* bottom → top animation only */
-  .stepCard {
-    transform: translateY(32px);
+  .loopTrack {
+    gap: 12px;
+  }
+
+  .stepCard strong {
+    font-size: 11px;
+  }
+
+  .stepCard p {
+    font-size: 12px;
+    color: #616161;
+    padding: 3px 4px;
+    border-radius: 3px;
   }
 
   .show {
     transform: translateY(0);
   }
 }
-
-
